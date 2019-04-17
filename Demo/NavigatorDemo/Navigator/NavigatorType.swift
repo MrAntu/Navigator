@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public typealias URLPattern = String
-public typealias NavigatorParams = Any
+public typealias NavigatorParams = [String: Any]
 public typealias ViewControllerFactory = (_ url: URLPattern, _ params: NavigatorParams?) -> UIViewController?
 //public typealias URLOpenHandlerFactory = (_ url: URLPattern, _ params: NavigatorParams?) -> Bool
 //用于上级回调

@@ -14,13 +14,13 @@ extension UIViewController {
         static var completeKey = "DDRouterComplete"
     }
     
-    public var params: Any? {
+    public var params: NavigatorParams? {
         set {
             objc_setAssociatedObject(self, &NavigateAssociatedKeys.paramsKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         
         get {
-            return objc_getAssociatedObject(self, &NavigateAssociatedKeys.paramsKey)
+            return objc_getAssociatedObject(self, &NavigateAssociatedKeys.paramsKey) as? NavigatorParams
         }
     }
     

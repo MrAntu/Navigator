@@ -18,7 +18,7 @@ class ViewController: UIViewController {
 
     @IBAction func pushAction(_ sender: Any) {
         
-        Navigator.shared.push(kNavigatorSecondVC, params: "hahahaha") { (value) in
+        Navigator.shared.push(kNavigatorSecondVC, params: ["name": "lisi"]) { (value) in
             print("接收到上级回调传值")
             print(value)
         }
