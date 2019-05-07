@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE21262822818276007306EC /* UIViewController+NavigateTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21262722818276007306EC /* UIViewController+NavigateTopViewController.swift */; };
 		CEB1BD912266D22800675E39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1BD902266D22800675E39 /* AppDelegate.swift */; };
 		CEB1BD932266D22800675E39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1BD922266D22800675E39 /* ViewController.swift */; };
 		CEB1BD962266D22800675E39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB1BD942266D22800675E39 /* Main.storyboard */; };
@@ -16,7 +17,6 @@
 		CEB1BDB12266D22900675E39 /* NavigatorDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1BDB02266D22900675E39 /* NavigatorDemoUITests.swift */; };
 		CEB1BDC02266D28500675E39 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1BDBF2266D28500675E39 /* Navigator.swift */; };
 		CEB1BDC22266D2CD00675E39 /* NavigatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1BDC12266D2CD00675E39 /* NavigatorType.swift */; };
-		CEB1BDC42266D74D00675E39 /* UIViewController+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1BDC32266D74D00675E39 /* UIViewController+TopViewController.swift */; };
 		CEB1BDC62266D81F00675E39 /* UIViewController+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1BDC52266D81F00675E39 /* UIViewController+Navigate.swift */; };
 		CEB1BDC82266F9B700675E39 /* NavigatorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1BDC72266F9B700675E39 /* NavigatorAction.swift */; };
 		CEB1BDCF2266FDA200675E39 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1BDCD2266FDA200675E39 /* SecondViewController.swift */; };
@@ -42,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE21262722818276007306EC /* UIViewController+NavigateTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+NavigateTopViewController.swift"; path = "../../../Navigator/UIViewController+NavigateTopViewController.swift"; sourceTree = "<group>"; };
 		CEB1BD8D2266D22800675E39 /* NavigatorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigatorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB1BD902266D22800675E39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB1BD922266D22800675E39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +58,6 @@
 		CEB1BDB22266D22900675E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB1BDBF2266D28500675E39 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		CEB1BDC12266D2CD00675E39 /* NavigatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorType.swift; sourceTree = "<group>"; };
-		CEB1BDC32266D74D00675E39 /* UIViewController+TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TopViewController.swift"; sourceTree = "<group>"; };
 		CEB1BDC52266D81F00675E39 /* UIViewController+Navigate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigate.swift"; sourceTree = "<group>"; };
 		CEB1BDC72266F9B700675E39 /* NavigatorAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorAction.swift; sourceTree = "<group>"; };
 		CEB1BDCD2266FDA200675E39 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -149,9 +149,9 @@
 		CEB1BDBE2266D25500675E39 /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
+				CE21262722818276007306EC /* UIViewController+NavigateTopViewController.swift */,
 				CEB1BDBF2266D28500675E39 /* Navigator.swift */,
 				CEB1BDC12266D2CD00675E39 /* NavigatorType.swift */,
-				CEB1BDC32266D74D00675E39 /* UIViewController+TopViewController.swift */,
 				CEB1BDC52266D81F00675E39 /* UIViewController+Navigate.swift */,
 			);
 			path = Navigator;
@@ -294,10 +294,10 @@
 				CEB1BD932266D22800675E39 /* ViewController.swift in Sources */,
 				CEB1BD912266D22800675E39 /* AppDelegate.swift in Sources */,
 				CEB1BDC02266D28500675E39 /* Navigator.swift in Sources */,
+				CE21262822818276007306EC /* UIViewController+NavigateTopViewController.swift in Sources */,
 				CEB1BDC82266F9B700675E39 /* NavigatorAction.swift in Sources */,
 				CEB1BDC62266D81F00675E39 /* UIViewController+Navigate.swift in Sources */,
 				CEB1BDC22266D2CD00675E39 /* NavigatorType.swift in Sources */,
-				CEB1BDC42266D74D00675E39 /* UIViewController+TopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

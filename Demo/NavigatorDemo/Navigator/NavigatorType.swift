@@ -12,22 +12,20 @@ import UIKit
 public typealias URLPattern = String
 public typealias NavigatorParams = [String: Any]
 public typealias ViewControllerFactory = (_ url: URLPattern, _ params: NavigatorParams?) -> UIViewController?
-//public typealias URLOpenHandlerFactory = (_ url: URLPattern, _ params: NavigatorParams?) -> Bool
+public typealias OpenHandlerFactory = (_ url: URLPattern, _ params: NavigatorParams?) -> Bool
 //用于上级回调
 public typealias NavigateCompletion = (Any?)->()
 
-protocol NavigatorType {
+public protocol NavigatorType {
 
     func register(_ pattern: URLPattern, _ factory: @escaping ViewControllerFactory)
     
     func viewController(for url: URLPattern, params: NavigatorParams?) -> UIViewController?
 
-//    func handle(_ pattern: URLPattern, _ factory: @escaping URLOpenHandlerFactory)
+    func registerAction(_ pattern: URLPattern, _ factory: @escaping OpenHandlerFactory)
 
-//    func handler(for url: URLPattern, params: NavigatorParams?) -> Bool
+    func actionHandle(for url: URLPattern, params: NavigatorParams?) -> Bool
 
-//    @discardableResult
-//    func openURL(_ url: URLPattern, params: NavigatorParams?) -> Bool
 }
 
 //MARK -- fileprivate
@@ -37,7 +35,7 @@ extension NavigatorType {
         guard let viewController = self.viewController(for: url, params: params)  else {
             return nil
         }
-        return self.pushViewController(viewController, params: params, isNeedPush: isNeedPush,animated: animated, navigateCompletion: navigateCompletion)
+        return pushViewController(viewController, params: params, isNeedPush: isNeedPush,animated: animated, navigateCompletion: navigateCompletion)
     }
     
     @discardableResult
@@ -78,11 +76,6 @@ extension NavigatorType {
         }
         return viewController
     }
-    
-//    @discardableResult
-//    public func openURL(_ url: URLPattern, params: NavigatorParams?) -> Bool {
-//        return self.handler(for: url, params: params)
-//    }
 
 }
 
@@ -99,7 +92,7 @@ extension NavigatorType {
     /// - Returns: UIViewController
     @discardableResult
     public func push(_ url: URLPattern, params: NavigatorParams? = nil, isNeedPush: Bool = true, animated: Bool = true, navigateCompletion: NavigateCompletion? = nil) -> UIViewController? {
-        return self.pushURL(url, params: params, isNeedPush: isNeedPush,animated: animated, navigateCompletion: navigateCompletion)
+        return pushURL(url, params: params, isNeedPush: isNeedPush,animated: animated, navigateCompletion: navigateCompletion)
     }
 
     /// present
@@ -114,12 +107,19 @@ extension NavigatorType {
     /// - Returns: UIViewController
     @discardableResult
     public func present(_ url: URLPattern, params: NavigatorParams? = nil, isNeedPresent: Bool = true, animated: Bool = true, completion: (() -> Void)? = nil, navigateCompletion: NavigateCompletion? = nil) -> UIViewController? {
-        return self.presentURL(url, params: params, isNeedPresent: isNeedPresent, animated: animated, completion: completion, navigateCompletion: navigateCompletion)
+        return presentURL(url, params: params, isNeedPresent: isNeedPresent, animated: animated, completion: completion, navigateCompletion: navigateCompletion)
     }
     
-//    @discardableResult
-//    public func open(_ url: URLPattern, params: NavigatorParams? = nil) -> Bool {
-//        return self.openURL(url, params: params)
-//    }
+    
+    /// action
+    ///
+    /// - Parameters:
+    ///   - url: url
+    ///   - params: 参数
+    /// - Returns: action是否成功
+    @discardableResult
+    public func action(_ url: URLPattern, params: NavigatorParams? = nil) -> Bool {
+        return actionHandle(for: url, params: params)
+    }
 
 }

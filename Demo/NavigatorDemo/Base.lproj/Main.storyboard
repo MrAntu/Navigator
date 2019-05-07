@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CkN-h2-TUe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CkN-h2-TUe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,13 +40,26 @@
                                     <action selector="pushAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2nQ-ie-EXJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOj-Rz-c89">
+                                <rect key="frame" x="178" y="239" width="32" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mIa-5e-Qew"/>
+                                    <constraint firstAttribute="width" constant="32" id="vH4-fg-07W"/>
+                                </constraints>
+                                <state key="normal" title="alert"/>
+                                <connections>
+                                    <action selector="alertAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pzS-6k-O4d"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="AOj-Rz-c89" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="178" id="8zs-W7-NZW"/>
                             <constraint firstItem="oaI-KM-Gck" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="168" id="BDp-Pv-t6o"/>
                             <constraint firstItem="oaI-KM-Gck" firstAttribute="top" secondItem="Iwr-K5-Iwe" secondAttribute="bottom" constant="29" id="KRR-ka-gDO"/>
                             <constraint firstItem="Iwr-K5-Iwe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="W4v-u3-1Qb"/>
                             <constraint firstItem="Iwr-K5-Iwe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="XTJ-Lt-7la"/>
+                            <constraint firstItem="AOj-Rz-c89" firstAttribute="top" secondItem="oaI-KM-Gck" secondAttribute="bottom" constant="31" id="fXw-YM-RPO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

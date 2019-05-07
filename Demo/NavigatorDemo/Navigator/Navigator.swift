@@ -12,15 +12,17 @@ import UIKit
 open class Navigator: NavigatorType {
     static let shared = Navigator()
     private var viewControllerFactories = [URLPattern: ViewControllerFactory]()
-//    private var handlerFactories = [URLPattern: URLOpenHandlerFactory]()
+    private var handlerFactories = [URLPattern: OpenHandlerFactory]()
     
     private init() { }
     
+    // 外界无需调用
     public func register(_ pattern: URLPattern, _ factory: @escaping ViewControllerFactory) {
         viewControllerFactories[pattern] = factory
     }
-
-    func viewController(for url: URLPattern, params: NavigatorParams? = nil) -> UIViewController? {
+    
+    // 外界无需调用
+    public func viewController(for url: URLPattern, params: NavigatorParams? = nil) -> UIViewController? {
         let urlArr = Array(viewControllerFactories.keys)
         if urlArr.contains(url) == false {
             return nil
@@ -31,19 +33,21 @@ open class Navigator: NavigatorType {
         return factory(url, params)
     }
     
-//    public func handle(_ pattern: URLPattern, _ factory: @escaping URLOpenHandlerFactory) {
-//        handlerFactories[pattern] = factory
-//    }
-
-//    func handler(for url: URLPattern, params: NavigatorParams? = nil) -> Bool {
-//        let urlArr = Array(handlerFactories.keys)
-//        if urlArr.contains(url) == false {
-//            return false
-//        }
-//        guard let factory = handlerFactories[url] else {
-//            return false
-//        }
-//        return factory(url, params)
-//    }
+    // 外界无需调用
+    public func registerAction(_ pattern: URLPattern, _ factory: @escaping OpenHandlerFactory) {
+        handlerFactories[pattern] = factory
+    }
     
+    // 外界无需调用
+    public func actionHandle(for url: URLPattern, params: NavigatorParams? = nil) -> Bool {
+        let urlArr = Array(handlerFactories.keys)
+        if urlArr.contains(url) == false {
+            return false
+        }
+        guard let factory = handlerFactories[url] else {
+            return false
+        }
+        return factory(url, params)
+    }
+
 }
