@@ -56,7 +56,29 @@ push函数具体参数解释：
 
 present同理，具体参见demo。
 
-#### 3. params & navigateCompletion
+#### 3. action
+注册action，方便各模块复用
+```swift
+  Navigator.shared.action(kShowAlert, params: ["vc": self, "callBack": { (str : String) in
+                print(str)
+            }])
+```
+参数解析：
+
+```swift
+/// action
+    ///
+    /// - Parameters:
+    ///   - url: url
+    ///   - params: 参数
+    /// - Returns: action是否成功
+    @discardableResult
+    public func action(_ url: URLPattern, params: NavigatorParams? = nil) -> Bool {
+        return actionHandle(for: url, params: params)
+    }
+```
+
+#### 4. params & navigateCompletion
 
 `push & present`的操作时，会对每个`viewController`通过runtime绑定一个`params`，和`navigateCompletion`。
 `params`：为入参。
