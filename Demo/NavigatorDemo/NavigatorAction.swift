@@ -28,9 +28,7 @@ enum NavigatorAction {
         }
         
         Navigator.shared.registerAction(kShowAlert) { (url, params) -> Bool in
-            
             guard let params = params,
-             let vc = params["vc"] as? UIViewController,
                 let callBack = params["callBack"] as? ((String) -> Void) else {
                 return false
             }
@@ -45,7 +43,7 @@ enum NavigatorAction {
             alertVC.addAction(cancelAction)
             alertVC.addAction(actionCommit)
             
-            vc.present(alertVC, animated: true, completion: nil)
+            UIViewController.navigateTopViewController?.present(alertVC, animated: true, completion: nil)
             
             return true
         }

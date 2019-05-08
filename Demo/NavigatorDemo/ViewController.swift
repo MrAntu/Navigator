@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func alertAction(_ sender: Any) {        
-        Navigator.shared.action(kShowAlert, params: ["vc": self, "callBack": { (str : String) in
+        Navigator.shared.action(kShowAlert, params: ["callBack": { (str : String) in
                 print(str)
             }])
     }
